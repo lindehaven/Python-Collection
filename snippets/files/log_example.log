@@ -1,0 +1,14 @@
+2019-03-27 11:58:21,420 CRITICAL in log_example.py at line 17 : CRITICAL is for critical errors that cannot be resolved.
+2019-03-27 11:58:21,421 ERROR in log_example.py at line 18 : ERROR is for major errors.
+2019-03-27 11:58:21,421 WARNING in log_example.py at line 19 : WARNING is for anomalies that might become errors.
+2019-03-27 11:58:21,421 INFO in log_example.py at line 20 : INFO is for important states in normal operation.
+2019-03-27 11:58:21,421 DEBUG in log_example.py at line 21 : DEBUG is for trouble-shooting.
+2019-03-27 11:58:21,421 CRITICAL in log_example.py at line 28 : Will be logged.
+2019-03-27 11:58:21,422 ERROR in log_example.py at line 29 : Will be logged.
+2019-03-27 13:56:53,813 CRITICAL in log_example.py at line 17 : CRITICAL is for critical errors that cannot be resolved.
+2019-03-27 13:56:53,813 ERROR in log_example.py at line 18 : ERROR is for major errors.
+2019-03-27 13:56:53,813 WARNING in log_example.py at line 19 : WARNING is for anomalies that might become errors.
+2019-03-27 13:56:53,813 INFO in log_example.py at line 20 : INFO is for important states in normal operation.
+2019-03-27 13:56:53,814 DEBUG in log_example.py at line 21 : DEBUG is for trouble-shooting.
+2019-03-27 13:56:53,814 CRITICAL in log_example.py at line 28 : Will be logged.
+2019-03-27 13:56:53,814 ERROR in log_example.py at line 29 : Will be logged.

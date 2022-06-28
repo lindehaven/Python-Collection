@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module obccu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>obccu</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cpk63475%5Cdocuments%5Ckurser%5C00%20gemensamt%5Csnippets%5Cbmv%5Cobccu.py">c:\users\pk63475\documents\kurser\00 gemensamt\snippets\bmv\obccu.py</a></font></td></tr></table>
+    <p><tt>Onboard&nbsp;Computer&nbsp;Calculation&nbsp;Unit&nbsp;(OBCCU)<br>
+&nbsp;<br>
+Author&nbsp;:&nbsp;Lars&nbsp;Lindehaven<br>
+Date&nbsp;&nbsp;&nbsp;:&nbsp;2019-06-05</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="obcdu.html">obcdu</a><br>
+</td><td width="25%" valign=top><a href="obceu.html">obceu</a><br>
+</td><td width="25%" valign=top><a href="pickle.html">pickle</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-average_power_consumption"><strong>average_power_consumption</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average_power_consumption&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Average&nbsp;power&nbsp;consumption&nbsp;in&nbsp;kilowatts&nbsp;[kW].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-average_speed"><strong>average_speed</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;average_speed&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Average&nbsp;speed&nbsp;in&nbsp;kilometers&nbsp;per&nbsp;hour&nbsp;[km/h].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-current_speed"><strong>current_speed</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;current_speed&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Current&nbsp;speed&nbsp;in&nbsp;kilometers&nbsp;per&nbsp;hour&nbsp;[km/h].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-remaining_distance"><strong>remaining_distance</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;remaining_distance&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remaining&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m]&nbsp;using&nbsp;remaining&nbsp;energy.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-sampled"><strong>sampled</strong></a>(tsps, flwd, frwd, rlwd, rrwd)</dt><dd><tt>Receives&nbsp;wheel&nbsp;distances&nbsp;for&nbsp;all&nbsp;four&nbsp;wheels&nbsp;at&nbsp;a&nbsp;given&nbsp;sample&nbsp;time.<br>
+&nbsp;<br>
+Calculates&nbsp;travelled&nbsp;distance,&nbsp;remaining&nbsp;distance&nbsp;using&nbsp;remaining&nbsp;energy,<br>
+current&nbsp;speed,&nbsp;average&nbsp;speed,&nbsp;average&nbsp;power&nbsp;consumption,&nbsp;wheel&nbsp;spin&nbsp;warning<br>
+and&nbsp;wheel&nbsp;skid&nbsp;warning.<br>
+&nbsp;<br>
+Time&nbsp;since&nbsp;previous&nbsp;sample&nbsp;is&nbsp;nominally&nbsp;0.1s.<br>
+&nbsp;<br>
+Wheel&nbsp;distance&nbsp;is&nbsp;positive&nbsp;when&nbsp;the&nbsp;wheel&nbsp;rotates&nbsp;forward&nbsp;and&nbsp;wheel<br>
+distance&nbsp;is&nbsp;negative&nbsp;when&nbsp;the&nbsp;wheel&nbsp;rotates&nbsp;backward.<br>
+&nbsp;<br>
+Arguments<br>
+---------<br>
+&nbsp;&nbsp;tsps&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Time&nbsp;since&nbsp;previous&nbsp;sample&nbsp;in&nbsp;seconds&nbsp;[s].<br>
+&nbsp;&nbsp;flwd&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Front&nbsp;left&nbsp;wheel&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m].<br>
+&nbsp;&nbsp;frwd&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Front&nbsp;right&nbsp;wheel&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m].<br>
+&nbsp;&nbsp;rlwd&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rear&nbsp;left&nbsp;wheel&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m].<br>
+&nbsp;&nbsp;rrwd&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Rear&nbsp;right&nbsp;wheel&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m].<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;sampled&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;successful&nbsp;calculation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;if&nbsp;unsuccessful&nbsp;calculation.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-travelled_distance"><strong>travelled_distance</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;travelled_distance&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travelled&nbsp;distance&nbsp;in&nbsp;meters&nbsp;[m].<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-wheel_skid_warning"><strong>wheel_skid_warning</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wheel_skid_warning&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;one,&nbsp;two&nbsp;or&nbsp;three&nbsp;wheels&nbsp;skid.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;if&nbsp;no&nbsp;wheel&nbsp;skids.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+ <dl><dt><a name="-wheel_spin_warning"><strong>wheel_spin_warning</strong></a>()</dt><dd><tt>Arguments<br>
+---------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wheel_spin_warning&nbsp;:&nbsp;bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;one,&nbsp;two&nbsp;or&nbsp;three&nbsp;wheels&nbsp;spin.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;if&nbsp;no&nbsp;wheel&nbsp;spins.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;None&nbsp;if&nbsp;not&nbsp;implemented.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>NOMINAL_RANGE_PER_KWH</strong> = 3000</td></tr></table>
+</body></html>
